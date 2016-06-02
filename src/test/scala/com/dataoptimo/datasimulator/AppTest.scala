@@ -10,7 +10,7 @@ class AppTest {
     @Test
     def testSimulatorMinute() = {
       val dst = new ConsoleDestination()
-      val simulator = new Simulator(ConsumptionProfile.House, ConsumptionProfile.Minute,dst)
+      val simulator = new EnergySimulator(ConsumptionProfile.House, ConsumptionProfile.Minute,dst)
       println(simulator.minute)
       println(System.currentTimeMillis())
       assertTrue(simulator.minute==929)

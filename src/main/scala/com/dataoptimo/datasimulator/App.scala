@@ -7,8 +7,8 @@ package com.dataoptimo.datasimulator
  */
 object App extends Application {
   
-  val dst = new ConsoleDestination()
-  val simulator = new Simulator(ConsumptionProfile.House,ConsumptionProfile.Minute,dst)
+  val dst = new KafkaDestination("localhost:9042","topic1")
+  val simulator = new EnergySimulator(ConsumptionProfile.House,ConsumptionProfile.Minute,dst)
   simulator.start()
   
 }
